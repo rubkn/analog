@@ -13,6 +13,21 @@ export const metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+function Navigation() {
+  return (
+    <nav>
+      <ul className="flex gap-4">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
+  );
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -20,7 +35,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>{children}</body>
+      <body className={`font-sans ${inter.variable}`}>
+        <Navigation />
+        {children}
+      </body>
     </html>
   );
 }

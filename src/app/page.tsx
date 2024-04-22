@@ -1,36 +1,27 @@
 import Link from "next/link";
 
+const mock = [
+  "https://utfs.io/f/c0553481-5800-4903-b84f-18acbc613775-nhfnk5.JPG",
+  "https://utfs.io/f/51571297-d53e-485d-948a-031cf1416976-nhfnmu.JPG",
+  "https://utfs.io/f/f4f130f2-cfd5-436c-910c-957a537f55d5-nhfnno.JPG",
+  "https://utfs.io/f/f540a744-880e-4b77-a7e2-64144990f103-nhfnnl.JPG",
+  "https://utfs.io/f/da713851-ec69-432c-9279-b09eed692e66-nhfnob.JPG",
+  "https://utfs.io/f/94625d81-8091-49b7-b45a-742c6813c2b7-nhfnnn.JPG",
+  "https://utfs.io/f/4fe17171-2913-4447-a7a6-da4ee24cd53e-nhfnnp.JPG",
+];
+
+const images = mock.map((url, index) => ({
+  id: index + 1,
+  url,
+}));
+
 export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
-        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-          Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
-        </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/usage/first-steps"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">First Steps →</h3>
-            <div className="text-lg">
-              Just the basics - Everything you need to know to set up your
-              database and authentication.
-            </div>
-          </Link>
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/introduction"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">Documentation →</h3>
-            <div className="text-lg">
-              Learn more about Create T3 App, the libraries it uses, and how to
-              deploy it.
-            </div>
-          </Link>
-        </div>
+      <div className="columns-4 gap-5">
+        {[...images, ...images, ...images].map((image) => (
+          <img src={image.url} className="m-4 h-auto max-w-full rounded-lg" />
+        ))}
       </div>
     </main>
   );
