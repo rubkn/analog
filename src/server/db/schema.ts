@@ -15,14 +15,17 @@ import {
  * database instance for multiple projects.
  *
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
+ * Add export const createTable = pgTableCreator((name) => `analog_${name}`); 
+ * If needed to use a database for a different project
  */
-export const createTable = pgTableCreator((name) => `analog_${name}`);
+export const createTable = pgTableCreator((name) => `${name}`);
 
-export const posts = createTable(
-  "post",
+export const photos = createTable(
+  "photo",
   {
     id: serial("id").primaryKey(),
-    name: varchar("name", { length: 256 }),
+    name: varchar("name", { length: 256 }).notNull(),
+    url: varchar("url", { length: 1024 }).notNull(),
     createdAt: timestamp("created_at")
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
@@ -30,5 +33,5 @@ export const posts = createTable(
   },
   (example) => ({
     nameIndex: index("name_idx").on(example.name),
-  })
+  }),
 );

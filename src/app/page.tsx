@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { db } from "~/server/db";
 
 export const dynamic = "force-dynamic";
 
@@ -17,12 +17,18 @@ const images = mock.map((url, index) => ({
   url,
 }));
 
-export default function HomePage() {
+export default async function HomePage() {
+  const photos = await db.query.photos.findMany();
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
       <div className="columns-4 gap-5">
-        {[...images, ...images, ...images].map((image) => (
-          <img src={image.url} className="m-4 h-auto max-w-full rounded-lg" />
+        {photos.map((image) => (
+          <img
+            key={image.id}
+            src={image.url}
+            className="h-auto max-w-full rounded-lg"
+          />
         ))}
       </div>
     </main>
