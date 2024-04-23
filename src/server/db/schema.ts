@@ -18,7 +18,7 @@ import {
  * Add export const createTable = pgTableCreator((name) => `analog_${name}`); 
  * If needed to use a database for a different project
  */
-export const createTable = pgTableCreator((name) => `${name}`);
+export const createTable = pgTableCreator((name) => `gllry_${name}`);
 
 export const photos = createTable(
   "photo",
@@ -26,7 +26,7 @@ export const photos = createTable(
     id: serial("id").primaryKey(),
     name: varchar("name", { length: 256 }).notNull(),
     url: varchar("url", { length: 1024 }).notNull(),
-    createdAt: timestamp("created_at")
+    createdAt: timestamp("createdAt")
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
     updatedAt: timestamp("updatedAt"),
