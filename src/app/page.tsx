@@ -8,13 +8,13 @@ export default async function HomePage() {
   });
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="columns-4 gap-5">
-        {photos.map((image) => (
+    <main className="flex min-h-screen flex-col items-center justify-center bg-neutral-900 text-white">
+      <div className="columns-6 gap-6 sm:columns-1 sm:gap-2 md:columns-2 lg:columns-4 lg:gap-4">
+        {[...photos, ...photos, ...photos].map((image) => (
           <img
             key={image.id}
             src={image.url}
-            className="h-auto max-w-full rounded-lg"
+            className="mb-4 h-auto max-w-full rounded-lg"
           />
         ))}
       </div>

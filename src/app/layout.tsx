@@ -15,7 +15,7 @@ export const metadata = {
 
 function Navigation() {
   return (
-    <nav>
+    <nav className="bg-neutral-900 text-white">
       <ul className="flex gap-4">
         <li>
           <a href="/">Home</a>
