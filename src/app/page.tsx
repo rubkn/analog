@@ -10,7 +10,7 @@ async function Gallery() {
 
   return (
     <div className="columns-6 gap-6 sm:columns-1 sm:gap-2 md:columns-2 lg:columns-4 lg:gap-4">
-      {[...photos, ...photos, ...photos].map((image) => (
+      {photos.map((image) => (
         <img
           key={image.id}
           src={image.url}
