@@ -8,7 +8,7 @@ export function Navigation() {
   const router = useRouter();
 
   return (
-    <nav className="flex justify-between bg-neutral-900 text-white">
+    <nav className="flex justify-between">
       <ul className="flex gap-4">
         <li>
           <a href="/">Home</a>

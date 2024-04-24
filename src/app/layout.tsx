@@ -38,7 +38,7 @@ export default function RootLayout({
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
         <body className={`font-sans ${inter.variable}`}>
-          <Navigation />
+          {/* <Navigation /> */}
           {children}
           {modal}
           <div id="modal-root" />
