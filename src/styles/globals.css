@@ -5,3 +5,7 @@
 body {
     @apply bg-neutral-900 text-white
 }
+
+dialog {
+    @apply max-w-full max-h-full
+}
