@@ -1,8 +1,11 @@
 import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
+import { Chivo } from "next/font/google";
+
 import { ClerkProvider } from "@clerk/nextjs";
-import { Navigation } from "~/app/_components/navigation";
+import { dark } from "@clerk/themes";
+
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "~/app/api/uploadthing/core";
@@ -12,8 +15,14 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
+const chivo = Chivo({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-chivo",
+});
+
 export const metadata = {
-  title: "gllry",
+  title: "rawstorm",
   description: "share your analogs",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
@@ -26,7 +35,7 @@ export default function RootLayout({
   modal: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider appearance={{ baseTheme: dark }}>
       <html lang="en">
         <NextSSRPlugin
           /**
@@ -37,7 +46,7 @@ export default function RootLayout({
            */
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
-        <body className={`font-sans ${inter.variable}`}>
+        <body className={`font-chivo ${inter.variable} ${chivo.variable}`}>
           {/* <Navigation /> */}
           {children}
           {modal}

@@ -8,6 +8,9 @@ dependencies:
   '@clerk/nextjs':
     specifier: ^5.0.1
     version: 5.0.1(eslint@8.57.0)(next@14.2.2)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.5)
+  '@clerk/themes':
+    specifier: ^2.1.2
+    version: 2.1.2
   '@sentry/nextjs':
     specifier: ^7.105.0
     version: 7.112.1(next@14.2.2)(react@18.2.0)
@@ -189,8 +192,23 @@ packages:
       swr: 2.2.0(react@18.2.0)
     dev: false
 
+  /@clerk/themes@2.1.2:
+    resolution: {integrity: sha512-amSxjWJGYDOKFQDa+QCSmfyjIzdPo2e5L0PA/GbP40DeBA4x0RAdXQiY8OAtglvLPw21aOWNMqSYWJXIF0SYVQ==}
+    engines: {node: '>=18.17.0'}
+    dependencies:
+      '@clerk/types': 4.2.0
+      tslib: 2.4.1
+    dev: false
+
   /@clerk/types@4.0.0:
     resolution: {integrity: sha512-my/uNzHflLYvoLR8RT3LBmYulYGkz+SOVYMdzWt14LpRHajQotnfDSq/GEkfjrBm2HXuZ82GxEDMyYtqHUKv8w==}
+    engines: {node: '>=18.17.0'}
+    dependencies:
+      csstype: 3.1.1
+    dev: false
+
+  /@clerk/types@4.2.0:
+    resolution: {integrity: sha512-JtQINgvRGkO9K8os8pSj3QvNrBDvdc0lFpbTwpF3J1CBLafiJmJiBUyUSzWcI/k/9FlClMZxauZufVp9jlSBjg==}
     engines: {node: '>=18.17.0'}
     dependencies:
       csstype: 3.1.1

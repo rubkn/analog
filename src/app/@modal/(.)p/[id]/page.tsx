@@ -14,10 +14,10 @@ export default async function PhotoModal({
             {/* avatar img */}
             <div className="-mt-px flex flex-col">
               <p className="text-blue-gray-900 block font-sans text-sm font-medium leading-normal antialiased">
-                Tania Andrew
+                Alex Turner
               </p>
               <p className="block font-sans text-xs font-normal text-gray-700 antialiased">
-                @canwu
+                @alex
               </p>
             </div>
           </div>
