@@ -16,6 +16,16 @@ export default withUt({
         "radial-dark":
           "radial-gradient(at top left, rgba(0, 0, 0, 0.3), rgba(50, 50, 50, 0.5), rgba(100, 100, 100, 0.3), rgba(0, 100, 100, 0.5))",
       },
+      container: {
+        center: true,
+        screens: {
+          sm: "600px",
+          md: "728px",
+          lg: "984px",
+          xl: "1240px",
+          "2xl": "1496px",
+        },
+      },
     },
   },
   plugins: [],

@@ -1,16 +1,16 @@
-import { Wall } from "~/app/_components/wall";
+import { Wall } from "~/app/wall/wall";
 import { Hero } from "~/app/_components/hero";
+import { Navigation } from "~/app/_components/navigation";
 
 export const dynamic = "force-dynamic";
 
-export default async function HomePage() {
+export default async function WallPage() {
   return (
     <>
-      <Hero />
-      <main className="flex min-h-screen flex-col items-center justify-center">
-        <div className="text-center text-3xl text-white">
-          <Wall />
-        </div>
+      <Navigation />
+      {/* <Hero /> */}
+      <main className="container flex min-h-screen flex-col items-center justify-center">
+        <Wall />
       </main>
     </>
   );

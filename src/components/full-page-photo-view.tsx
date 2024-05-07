@@ -8,5 +8,5 @@ export async function FullPagePhotoView(props: { photoId: string }) {
   const photo = await getSinglePhoto(idAsNumber);
   const user = await clerkClient.users.getUser(photo.userId);
 
-  return <img src={photo.url} className=" w-auto" alt={photo.name} />;
-}
+  return <img src={photo.url} className="object-contain" alt={photo.name} />;
+} 

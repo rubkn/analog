@@ -8,7 +8,7 @@ export default async function PhotoModal({
 }) {
   return (
     <Modal>
-      <article className="text-blue-gray-500 m-4 flex w-3/4 min-w-[75%] max-w-[75%] flex-col rounded-lg bg-white font-sans text-base font-light leading-relaxed antialiased shadow-2xl">
+      <article className="text-blue-gray-500 m-4 flex max-w-[75%] flex-col rounded-lg bg-white font-sans text-base font-light leading-relaxed antialiased shadow-2xl">
         <section className="text-blue-gray-900 flex shrink-0 items-center justify-between p-4 font-sans text-2xl font-semibold leading-snug antialiased">
           <div className="flex items-center gap-3">
             {/* avatar img */}
@@ -46,7 +46,7 @@ export default async function PhotoModal({
             </button>
           </div>
         </section>
-        <section className="border-t-blue-gray-100 border-b-blue-gray-100 text-blue-gray-500 max-w-[calc((100vh-15%)*0.5)] border-b border-t p-0 font-sans text-base font-light leading-relaxed antialiased">
+        <section className="border-t-blue-gray-100 border-b-blue-gray-100 text-blue-gray-500 m-auto max-w-[calc((100vh-15%)*0.5)] border-b border-t p-0 font-sans text-base font-light leading-relaxed antialiased">
           <FullPagePhotoView photoId={photoId} />
         </section>
         <section className="text-blue-gray-500 flex shrink-0 flex-wrap items-center justify-between p-4">

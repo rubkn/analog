@@ -1,116 +1,301 @@
 "use client";
 
-import {
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-  useClerk,
-  useUser,
-} from "@clerk/nextjs";
-
-import { UploadButton } from "./utils/uploadthing";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function HomePage() {
-  const router = useRouter();
-  const { user, isLoaded, isSignedIn } = useUser();
-  const { signOut } = useClerk();
-
   return (
     <>
-      <main className="bg-blur-lg flex min-h-[100dvh] w-full bg-radial-light dark:bg-radial-dark">
-        <div className="flex flex-1 flex-col items-center justify-center bg-[#f5f5f5] px-6 py-12 sm:px-10 md:flex-row md:px-16 lg:px-20 xl:px-24 dark:bg-[#1a1a1a]">
-          <div className="max-w-md space-y-4 text-center md:mr-10 md:text-left lg:mr-16 xl:mr-20">
-            <div className="flex items-center">
-              {/* insert logo */}
-              <h1 className="font-chipo text-2xl font-bold tracking-tight text-[#333] dark:text-[#f5f5f5]">
-                rawstorm.
-              </h1>
-            </div>
-            <h2 className="text-balance text-4xl font-bold tracking-tight text-[#333] sm:text-5xl dark:text-[#f5f5f5]">
-              Rebel against the ordinary.
-            </h2>
-            <p className="text-lg text-[#666] dark:text-[#999]">
-              Share your most authentic work with a community that embraces the
-              raw and real in photography.
-            </p>
-          </div>
-          <article className="mt-10 flex w-full max-w-md flex-col space-y-8 rounded-lg bg-white p-6 shadow-lg md:mt-0 dark:bg-[#222]">
-            <section>
-              <h2 className="text-2xl font-bold text-gray-200">
-                Welcome back, {user?.fullName}
-              </h2>
-              <p className="text-[#666] dark:text-[#999]">Is this you?</p>
-            </section>
-
-            <section className="flex flex-col items-center space-x-4">
-              <div className="flex items-center space-x-4">
-                <div className="h-10 w-10 rounded-full bg-[#f5f5f5] dark:bg-[#222]">
-                  {!user || !isLoaded ? (
-                    <div className="flex items-center space-x-4">
-                      <div className="flex h-full w-full items-center justify-center rounded-full">
-                        <div className="h-10 w-10 animate-pulse rounded-full bg-gray-200 dark:bg-gray-600"></div>
-                      </div>
-
-                      <div className="flex flex-col">
-                        <div className="mb-2 h-4 w-24 animate-pulse rounded-md bg-gray-200 dark:bg-gray-600"></div>
-                        <div className="h-4 w-16 animate-pulse rounded-md bg-gray-200 dark:bg-gray-600"></div>
-                      </div>
-                    </div>
-                  ) : user.imageUrl ? (
-                    <img
-                      src={user.imageUrl}
-                      alt={user.username as string}
-                      className="h-full w-full rounded-full object-cover"
-                    />
-                  ) : (
-                    <div className="flex h-full w-full items-center justify-center rounded-full bg-gray-200 text-xl font-semibold dark:bg-gray-600">
-                      {`${user?.firstName?.charAt(0)}${user?.lastName?.charAt(0)}`}
-                    </div>
-                  )}
+      <header className="flex h-14 items-center px-4 lg:px-6">
+        <Link className="flex items-center justify-center" href="#">
+          {/* <BotIcon className="h-6 w-6" /> */}
+          <span className="sr-only">AI Learning Platform</span>
+        </Link>
+        <nav className="ml-auto flex gap-4 sm:gap-6">
+          <Link
+            className="text-sm font-medium underline-offset-4 hover:underline"
+            href="#"
+          >
+            Courses
+          </Link>
+          <Link
+            className="text-sm font-medium underline-offset-4 hover:underline"
+            href="#"
+          >
+            About
+          </Link>
+          <Link
+            className="text-sm font-medium underline-offset-4 hover:underline"
+            href="#"
+          >
+            Testimonials
+          </Link>
+          <Link
+            className="text-sm font-medium underline-offset-4 hover:underline"
+            href="#"
+          >
+            Contact
+          </Link>
+        </nav>
+      </header>
+      <main className="bg-blur-lg flex min-h-[100dvh] w-full flex-col bg-radial-light dark:bg-radial-dark">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+              <img
+                alt="Hero"
+                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
+                height="550"
+                src="/placeholder.svg"
+                width="550"
+              />
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                    Personalized Learning with AI Chatbots
+                  </h1>
+                  <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
+                    Unlock your full potential with our AI-powered learning
+                    platform. Enjoy personalized learning paths, interactive
+                    chatbots, and real-time progress tracking.
+                  </p>
                 </div>
+                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                  <Link
+                    className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+                    href="#"
+                  >
+                    Get Started
+                  </Link>
+                  <Link
+                    className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
+                    href="#"
+                  >
+                    Learn More
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+              <div className="flex flex-col items-start space-y-2">
+                {/* <CameraIcon className="h-8 w-8 text-gray-900 dark:text-gray-50" /> */}
+                <h3 className="text-xl font-bold">Capture Moments</h3>
+                <p className="text-gray-500 dark:text-gray-400">
+                  Use our intuitive tools to capture and edit your best photos.
+                </p>
+              </div>
+              <div className="flex flex-col items-start space-y-2">
+                {/* <ShareIcon className="h-8 w-8 text-gray-900 dark:text-gray-50" /> */}
+                <h3 className="text-xl font-bold">Share with Ease</h3>
+                <p className="text-gray-500 dark:text-gray-400">
+                  Easily share your photos with your followers and the
+                  community.
+                </p>
+              </div>
+              <div className="flex flex-col items-start space-y-2">
+                {/* <SearchIcon className="h-8 w-8 text-gray-900 dark:text-gray-50" /> */}
+                <h3 className="text-xl font-bold">Discover New Talent</h3>
+                <p className="text-gray-500 dark:text-gray-400">
+                  Explore a diverse range of photography styles and connect with
+                  talented creators.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full bg-gray-100 py-12 md:py-24 lg:py-32 dark:bg-gray-800">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  Discover the Best Moments
+                </h2>
+                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                  Explore a vibrant community of photographers and discover
+                  stunning moments captured through their lenses.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl grid-cols-2 gap-6 py-12 sm:grid-cols-3 lg:grid-cols-4">
+              <img
+                alt="Featured Photo"
+                className="rounded-lg object-cover"
+                height="300"
+                src="/placeholder.svg"
+                style={{
+                  aspectRatio: "300/300",
+                  objectFit: "cover",
+                }}
+                width="300"
+              />
+              <img
+                alt="Featured Photo"
+                className="rounded-lg object-cover"
+                height="300"
+                src="/placeholder.svg"
+                style={{
+                  aspectRatio: "300/300",
+                  objectFit: "cover",
+                }}
+                width="300"
+              />
+              <img
+                alt="Featured Photo"
+                className="rounded-lg object-cover"
+                height="300"
+                src="/placeholder.svg"
+                style={{
+                  aspectRatio: "300/300",
+                  objectFit: "cover",
+                }}
+                width="300"
+              />
+              <img
+                alt="Featured Photo"
+                className="rounded-lg object-cover"
+                height="300"
+                src="/placeholder.svg"
+                style={{
+                  aspectRatio: "300/300",
+                  objectFit: "cover",
+                }}
+                width="300"
+              />
+              <img
+                alt="Featured Photo"
+                className="rounded-lg object-cover"
+                height="300"
+                src="/placeholder.svg"
+                style={{
+                  aspectRatio: "300/300",
+                  objectFit: "cover",
+                }}
+                width="300"
+              />
+              <img
+                alt="Featured Photo"
+                className="rounded-lg object-cover"
+                height="300"
+                src="/placeholder.svg"
+                style={{
+                  aspectRatio: "300/300",
+                  objectFit: "cover",
+                }}
+                width="300"
+              />
+              <img
+                alt="Featured Photo"
+                className="rounded-lg object-cover"
+                height="300"
+                src="/placeholder.svg"
+                style={{
+                  aspectRatio: "300/300",
+                  objectFit: "cover",
+                }}
+                width="300"
+              />
+              <img
+                alt="Featured Photo"
+                className="rounded-lg object-cover"
+                height="300"
+                src="/placeholder.svg"
+                style={{
+                  aspectRatio: "300/300",
+                  objectFit: "cover",
+                }}
+                width="300"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <div className="space-y-4">
+                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                  Testimonial
+                </div>
+                <blockquote className="text-lg font-semibold leading-snug lg:text-xl lg:leading-normal">
+                  “This platform has completely transformed the way I share and
+                  discover photography. The community is amazing and the tools
+                  are incredibly powerful.”
+                </blockquote>
                 <div>
-                  <div className="font-medium">{user?.fullName}</div>
-                  <div className="text-sm text-[#666] dark:text-[#999]">
-                    {user?.primaryEmailAddress?.emailAddress}
+                  <div className="font-semibold">Jane Doe</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">
+                    Photographer, Acme Inc
                   </div>
                 </div>
-                <button
-                  className="btn btn-primary"
-                  onClick={() => router.push("/wall")}
-                >
-                  Yes, continue
-                </button>
               </div>
-              <div className="flex w-full flex-col">
-                <hr className="my-4 w-full border-gray-600 dark:border-gray-200" />
-
-                <div className="flex gap-2">
-                  <button
-                    className="btn btn-secondary"
-                    onClick={() => signOut()}
-                  >
-                    Sign In
-                  </button>
+              <div className="space-y-4">
+                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                  Testimonial
+                </div>
+                <blockquote className="text-lg font-semibold leading-snug lg:text-xl lg:leading-normal">
+                  “I've been using this platform for years and it's the best way
+                  to showcase my work and connect with other photographers.
+                  Highly recommended!”
+                </blockquote>
+                <div>
+                  <div className="font-semibold">John Smith</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">
+                    Photographer, Acme Inc
+                  </div>
                 </div>
               </div>
-            </section>
-          </article>
-        </div>
-      </main>
-      <main className="flex items-center justify-center">
-        <SignedOut>
-          <SignInButton />
-        </SignedOut>
-        <SignedIn>
-          <UserButton />
-          <UploadButton
-            endpoint="imageUploader"
-            onClientUploadComplete={() => router.refresh()}
-          />
-        </SignedIn>
+              <div className="space-y-4">
+                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                  Testimonial
+                </div>
+                <blockquote className="text-lg font-semibold leading-snug lg:text-xl lg:leading-normal">
+                  “This platform has been a game-changer for my photography
+                  business. The exposure and community support have been
+                  invaluable.”
+                </blockquote>
+                <div>
+                  <div className="font-semibold">Sarah Lee</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">
+                    Photographer, Acme Inc
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full border-t py-12 md:py-24 lg:py-32">
+          <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+            <div className="space-y-3">
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+                Join our vibrant photography community
+              </h2>
+              <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                Share your work, discover new talent, and connect with
+                like-minded creatives.
+              </p>
+            </div>
+            <div className="flex flex-col justify-center gap-2 min-[400px]:flex-row">
+              <Link
+                className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+                href="#"
+              >
+                Sign Up
+              </Link>
+              <Link
+                className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
+                href="#"
+              >
+                Learn More
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );
