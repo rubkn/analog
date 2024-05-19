@@ -20,7 +20,7 @@ export default function LoginPage() {
 
   return (
     <>
-      <main className="bg-blur-lg flex min-h-[100dvh] w-full bg-radial-light dark:bg-radial-dark">
+      <main className="bg-blur-lg flex min-h-[100dvh] w-full">
         <div className="flex flex-1 flex-col items-center justify-center bg-[#f5f5f5] px-6 py-12 sm:px-10 md:flex-row md:px-16 lg:px-20 xl:px-24 dark:bg-[#1a1a1a]">
           <div className="max-w-md space-y-4 text-center md:mr-10 md:text-left lg:mr-16 xl:mr-20">
             <div className="flex items-center">

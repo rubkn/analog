@@ -27,7 +27,7 @@
 }
 
 body {
-    @apply bg-neutral-900 text-white
+    @apply bg-neutral-900 text-white bg-radial-light dark:bg-radial-dark
 }
 
 dialog {

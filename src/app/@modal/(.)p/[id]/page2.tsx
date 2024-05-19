@@ -8,7 +8,7 @@ export default async function PhotoModal({
 }) {
   return (
     <Modal>
-      <article className="text-blue-gray-500 m-4 flex w-full flex-col rounded-lg bg-white font-sans text-base font-light leading-relaxed antialiased shadow-2xl">
+      <article className="text-blue-gray-500 m-4 flex max-w-[75%] flex-col rounded-lg bg-white font-sans text-base font-light leading-relaxed antialiased shadow-2xl">
         <section className="text-blue-gray-900 flex shrink-0 items-center justify-between p-4 font-sans text-2xl font-semibold leading-snug antialiased">
           <div className="flex items-center gap-3">
             {/* avatar img */}

@@ -37,13 +37,13 @@ export default function HomePage() {
           </Link>
         </nav>
       </header>
-      <main className="bg-blur-lg flex min-h-[100dvh] w-full flex-col bg-radial-light dark:bg-radial-dark">
+      <main className="bg-blur-lg flex min-h-[100dvh] w-full flex-col">
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <img
                 alt="Hero"
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
+                className="mx-auto aspect-[4/3] overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
                 height="550"
                 src="/placeholder.svg"
                 width="550"
@@ -82,14 +82,43 @@ export default function HomePage() {
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
               <div className="flex flex-col items-start space-y-2">
-                {/* <CameraIcon className="h-8 w-8 text-gray-900 dark:text-gray-50" /> */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  className="h-8 w-8 text-gray-900 dark:text-gray-50"
+                >
+                  <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+                  <circle cx="12" cy="13" r="3"></circle>
+                </svg>
                 <h3 className="text-xl font-bold">Capture Moments</h3>
                 <p className="text-gray-500 dark:text-gray-400">
                   Use our intuitive tools to capture and edit your best photos.
                 </p>
               </div>
               <div className="flex flex-col items-start space-y-2">
-                {/* <ShareIcon className="h-8 w-8 text-gray-900 dark:text-gray-50" /> */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  className="h-8 w-8 text-gray-900 dark:text-gray-50"
+                >
+                  <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                  <polyline points="16 6 12 2 8 6"></polyline>
+                  <line x1="12" x2="12" y1="2" y2="15"></line>
+                </svg>
                 <h3 className="text-xl font-bold">Share with Ease</h3>
                 <p className="text-gray-500 dark:text-gray-400">
                   Easily share your photos with your followers and the
@@ -97,7 +126,21 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="flex flex-col items-start space-y-2">
-                {/* <SearchIcon className="h-8 w-8 text-gray-900 dark:text-gray-50" /> */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  className="h-8 w-8 text-gray-900 dark:text-gray-50"
+                >
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.3-4.3"></path>
+                </svg>
                 <h3 className="text-xl font-bold">Discover New Talent</h3>
                 <p className="text-gray-500 dark:text-gray-400">
                   Explore a diverse range of photography styles and connect with
@@ -108,7 +151,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="w-full bg-gray-100 py-12 md:py-24 lg:py-32 dark:bg-gray-800">
+        <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -216,7 +259,18 @@ export default function HomePage() {
 
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  What Our Users Say
+                </h2>
+                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                  Explore a vibrant community of photographers and discover
+                  stunning moments captured through their lenses.
+                </p>
+              </div>
+            </div>
+            <div className="grid gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
               <div className="space-y-4">
                 <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
                   Testimonial
@@ -296,6 +350,26 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        <footer className="flex w-full shrink-0 flex-col items-center gap-2 border-t px-4 py-6 sm:flex-row md:px-6">
+          <p className="text-xs text-gray-500 dark:text-gray-400">
+            © 2024 AI Learning Platform. All rights reserved.
+          </p>
+          <nav className="flex gap-4 sm:ml-auto sm:gap-6">
+            <Link
+              className="text-xs underline-offset-4 hover:underline"
+              href="#"
+            >
+              Terms of Service
+            </Link>
+            <Link
+              className="text-xs underline-offset-4 hover:underline"
+              href="#"
+            >
+              Privacy Policy
+            </Link>
+          </nav>
+        </footer>
       </main>
     </>
   );
